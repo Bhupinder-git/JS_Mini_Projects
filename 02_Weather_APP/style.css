@@ -1,0 +1,480 @@
+/* ===========================================
+   WEATHER APP - COMPLETE CSS STYLES
+   =========================================== */
+
+/* ===========================================
+   RESET & BASE STYLES
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gilroy', 'Arial', sans-serif;
+    /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); */
+    background: linear-gradient(135deg, #1e3c72 0%, #111f 100%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===========================================
+   MAIN WRAPPER
+   =========================================== */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===========================================
+   HEADING
+   =========================================== */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================================
+   NAVIGATION TABS
+   =========================================== */
+.nav-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 10px;
+}
+
+.tab {
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab.current-tab {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================================
+   WEATHER CONTAINER
+   =========================================== */
+.weather-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    min-height: 400px;
+}
+
+/* ===========================================
+   CONTAINER STATES
+   =========================================== */
+.grant-location-container,
+.form-container,
+.loading-container,
+.user-info-container {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.grant-location-container.active,
+.form-container.active,
+.loading-container.active,
+.user-info-container.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===========================================
+   GRANT LOCATION CONTAINER
+   =========================================== */
+.grant-location-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.grant-location-container img {
+    margin-bottom: 1.5rem;
+    /* filter: brightness(0) invert(1); */
+    opacity: 0.8;
+}
+
+.grant-location-container p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.grant-location-container p:last-of-type {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* ===========================================
+   SEARCH FORM
+   =========================================== */
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.form-container input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-family: inherit;
+}
+
+.form-container input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-container button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* ===========================================
+   LOADING CONTAINER
+   =========================================== */
+.loading-container {
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    flex-direction: column;
+}
+
+.loading-container p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+#loading_animation{
+    height: 250px;
+    width: 500px;
+}
+
+/* ===========================================
+   USER INFO CONTAINER
+   =========================================== */
+.user-info-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ===========================================
+   CITY NAME & FLAG
+   =========================================== */
+.name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.name p {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.name img {
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================================
+   WEATHER DESCRIPTION
+   =========================================== */
+[data-weatherDesc] {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    text-transform: capitalize;
+}
+
+/* ===========================================
+   WEATHER ICON
+   =========================================== */
+[data-weatherIcon] {
+    width: 80px;
+    height: 80px;
+    margin: 1rem 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* ===========================================
+   TEMPERATURE
+   =========================================== */
+[data-temp] {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===========================================
+   PARAMETER CONTAINER
+   =========================================== */
+.parameter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.parameter {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.parameter:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.parameter img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.75rem;
+    /* filter: brightness(0) invert(1); */
+    opacity: 0.8;
+}
+
+.parameter p:first-of-type {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.parameter p:last-of-type {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* ===========================================
+   BUTTONS
+   =========================================== */
+.btn {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    font-family: inherit;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .tab {
+        padding: 0.75rem 1rem;
+        text-align: center;
+    }
+    
+    .name {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .name p {
+        font-size: 1.5rem;
+    }
+    
+    [data-temp] {
+        font-size: 2.5rem;
+    }
+    
+    .parameter-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .user-info-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .grant-location-container {
+        padding: 2rem 1rem;
+    }
+    
+    .form-container {
+        margin: 1rem auto;
+    }
+    
+    .user-info-container {
+        padding: 1rem;
+    }
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.user-info-container.active {
+    animation: fadeIn 0.5s ease;
+}
+
+[data-weatherIcon] {
+    animation: pulse 2s infinite;
+}
+
+/* ===========================================
+   SCROLLBAR STYLING
+   =========================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

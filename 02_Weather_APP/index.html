@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+    </head>
+<body>
+
+    <!-- main container -->
+    <div class="wrapper">
+
+        <!-- heading -->
+        <h1>Weather App</h1>
+
+        <!-- nav container -->
+        <div class="nav-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+
+            <!-- Grant Location Container -->
+            <div class="grant-location-container">
+                <img src="./assets/map.png" alt="location-pin" height="80" width="80" loading="lazy">
+                <p>Grant Loaction Access</p>
+                <p>Allow Access to get weather information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- Search Weather Section -->
+            <form class="form-container" data-searchForm>
+                <input type="text" placeholder="Search for City..." data-searchInput>
+                <button class="btn">
+                    <img src="./assets/loupe.png" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!-- Loading Screen Container -->
+            <div class="loading-container">
+                <dotlottie-wc src="https://lottie.host/013df87c-cf6c-4200-9846-03cda1fc1db9/PcqjcZU8h1.lottie"
+                    speed="1" autoplay loop id="loading_animation"></dotlottie-wc>
+            </div>
+
+            <!-- Weather Info Container -->
+            <div class="user-info-container">
+                <!-- city name and country flag countainer -->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+
+                <!-- type of weather is written in the below paragraph -->
+                <p data-weatherDesc></p>
+                <!-- icon corresponding to the above type of weather type -->
+                <img data-weatherIcon>
+                <!-- temerature here -->
+                <p data-temp></p>
+
+                <!-- Weather Parameter Container -->
+                <div class="parameter-container">
+
+                    <!-- card 1 -->
+                    <div class="parameter">
+                        <img src="./assets/storm.png" alt="wind-icon" height="65" width="65" loading="lazy">
+                        <p>Windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="parameter">
+                        <img src="./assets/humidity.png" alt="humidity-icon" height="65" width="65" loading="lazy">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="parameter">
+                        <img src="./assets/clouds.png" alt="cloud-icon" height="65" width="65" loading="lazy">
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="countryCodes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
