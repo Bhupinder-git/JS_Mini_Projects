@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-App</title>
+    <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- main container -->
+    <div class="wrapper">
+        <h1>MULTI-USER TODO APP</h1>
+
+        <!-- to-do's container -->
+        <div class="user-to-do-container" data-user-todos-container>
+
+            <!-- User 1 -->
+            <div class="user-to-do" data-user-todo>
+                <h2 class="header" data-user-todo-header>Bhupinder Singh</h2>
+                <p class="email" data-user-todo-email>Bhupinder@gmail.com</p>
+                
+                <!-- add work container -->
+                <div class="work-container" data-work-container>
+                    <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                    <button class="add-btn" data-work-container-add-btn>
+                        <img src="plus.svg">
+                    </button>
+                </div>
+
+                <!-- work list container -->
+                <div class="work-list-container" data-work-list-container>
+                    <p>Starting React Js
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                </div>
+            </div>
+
+            <!-- User 2 -->
+            <div class="user-to-do" data-user-todo>
+                <h2 class="header" data-user-todo-header>Khushi</h2>
+                <p class="email" data-user-todo-email>k3324@gmail.com</p>
+                
+                <!-- add work container -->
+                <div class="work-container" data-work-container>
+                    <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                    <button class="add-btn" data-work-container-add-btn>
+                        <img src="plus.svg">
+                    </button>
+                </div>
+
+                <!-- work list container -->
+                <div class="work-list-container" data-work-list-container>
+                    <p>Do HomeWork
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                    <p>Prepare for mid-term exams
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                </div>
+            </div>
+
+            <!-- User 3 -->
+            <div class="user-to-do" data-user-todo>
+                <h2 class="header" data-user-todo-header>Aditya Jha</h2>
+                <p class="email" data-user-todo-email>Adi@gmail.com</p>
+                
+                <!-- add work container -->
+                <div class="work-container" data-work-container>
+                    <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                    <button class="add-btn" data-work-container-add-btn>
+                        <img src="plus.svg">
+                    </button>
+                </div>
+
+                <!-- work list container -->
+                <div class="work-list-container" data-work-list-container>
+                    <p>Complete JS
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                </div>
+            </div>
+
+            <!-- User 4 -->
+            <div class="user-to-do" data-user-todo>
+                <h2 class="header" data-user-todo-header>Anubhav Prasad</h2>
+                <p class="email" data-user-todo-email>Anubhav30@gmail.com</p>
+                
+                <!-- add work container -->
+                <div class="work-container" data-work-container>
+                    <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                    <button class="add-btn" data-work-container-add-btn>
+                        <img src="plus.svg">
+                    </button>
+                </div>
+
+                <!-- work list container -->
+                <div class="work-list-container" data-work-list-container>
+                    <p>Revise Mathematics
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                    <p>Start Coding (DSA)
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                </div>
+            </div>
+
+            <!-- User 5 -->
+            <div class="user-to-do" data-user-todo>
+                <h2 class="header" data-user-todo-header>Hemesh Singh Rajput</h2>
+                <p class="email" data-user-todo-email>Hsr@gmail.com</p>
+                
+                <!-- add work container -->
+                <div class="work-container" data-work-container>
+                    <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                    <button class="add-btn" data-work-container-add-btn>
+                        <img src="plus.svg">
+                    </button>
+                </div>
+
+                <!-- work list container -->
+                <div class="work-list-container" data-work-list-container>
+                    <p>Start JS
+                        <img src="delete.png" class="deleteBtn" data-todo-delete>
+                    </p>
+                </div>
+            </div>
+
+            <!-- User 6 -->
+            <div class="user-to-do" data-user-todo>
+                <h2 class="header" data-user-todo-header>Hans Raj</h2>
+                <p class="email" data-user-todo-email>HansRaj@gmail.com</p>
+                
+                <!-- add work container -->
+                <div class="work-container" data-work-container>
+                    <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                    <button class="add-btn" data-work-container-add-btn>
+                        <img src="plus.svg">
+                    </button>
+                </div>
+
+                <!-- work list container -->
+                <div class="work-list-container" data-work-list-container>
+                </div>
+            </div>
+        </div>
+
+        <!-- New User Credential's form -->
+        <form class="new-user-add-form" data-new-user-add-form>
+            <!-- heading -->
+            <h2>Enter Your Credential's</h2>
+            <!-- name and email container -->
+            <div class="user-credentials-container">
+                <label for="name">Enter Your Name : </label>
+                <input type="name" id="name" placeholder="enter name here..." required data-user-name-input>
+
+                <label for="email">Enter your email : </label>
+                <input type="email" id="email" placeholder="enter email here..." required data-user-email-input>
+            </div>
+            <!-- submit button -->
+            <button class="submit-btn" data-user-details-submit-btn>Submit</button>
+        </form>
+
+    </div>
+    <!-- overlay -->
+    <div class="overlay" data-overlay></div>
+
+    <!-- add button -->
+    <button class="add-user-btn" data-user-add-btn>
+        <img src="plus.svg">
+        <p>ADD USER</p>
+    </button>
+
+    <!-- Template to create todo's -->
+    <template data-user-todo-template>
+        <div class="user-to-do" data-user-todo>
+            <h2 class="header" data-user-todo-header>Bhupinder Singh</h2>
+            <p class="email" data-user-todo-email>bhsingh3214@gmail.com</p>
+
+            <!-- add work container -->
+            <div class="work-container" data-work-container>
+                <input type="text" class="work-desc" placeholder="add your work here..." data-work-container-input>
+                <button class="add-btn" data-work-container-add-btn>
+                    <img src="plus.svg">
+                </button>
+            </div>
+
+            <!-- work list container -->
+            <div class="work-list-container" data-work-list-container>
+            </div>
+        </div>
+    </template>
+</body>
+</html>

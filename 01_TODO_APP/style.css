@@ -1,0 +1,289 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family : 'Gilroy', 'san-serif';
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #111f;
+    color: white;
+    overflow-x: hidden;
+}
+
+.wrapper{
+    padding: 1rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 2rem auto;
+    position: relative;
+    padding-bottom: 6rem;
+}
+
+.wrapper > h1{
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.562);
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container > label{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.search-container > #search{
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+.user-to-do-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,auto));
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    margin-top: 1.25rem;
+    align-items: start;
+    background-color: #111f;
+    color: white;
+}
+
+.user-to-do{
+    background-color: #111f;
+    color: white;
+    border: 0.025rem solid white;
+    padding: 0.75rem;
+}
+
+.user-to-do > .header{
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.user-to-do > .email{
+    color: rgba(255, 255, 255, 0.792);
+    font-size: 0.8rem;
+}
+
+.hide{
+    display: none;
+}
+
+button{
+    height: 50px;
+    width: 60px;
+    background-color: #111f;
+    color: white;
+}
+
+.work-container{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.25rem;
+    padding-left: 0rem;
+}
+
+.work-container > .work-desc{
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 1em 1em 1em 1em;
+    padding: 0.5rem;
+    width: 80%;
+    background-color: rgba(128, 128, 128, 0.201);
+    backdrop-filter: blur(2px);
+    color: white;
+}
+
+.work-container > .add-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.15em;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-color: rgb(25, 255, 52);
+    color: black;
+}
+
+.work-list-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0.25rem;
+    gap: 0.5rem;
+}
+
+.work-list-container > p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.75em 0.75em 0.75em 0.75em;
+    padding: 0.5rem 1rem;
+    background-color: rgba(128, 128, 128, 0.201);
+    backdrop-filter: blur(2px);
+    color: white;
+    margin-top: 0.25rem;
+}
+
+.work-list-container > p > .deleteBtn{
+    height: 30px;
+    width: 30px;
+}
+
+.add-user-btn{
+    display: flex;
+    flex-direction: row-reverse;
+    border: none;
+    outline: none;
+    background-color: rgb(25, 255, 52);
+    color: black;
+    position: relative;
+    width: auto;
+}
+
+.add-user-btn {
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+    z-index: 20;
+    margin-top: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .add-user-btn {
+        right: 2rem;
+        bottom: 2rem;
+    }
+}
+
+.add-user-btn > p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+    padding: 1rem;
+}
+
+.add-user-btn > img{
+    padding: 0.75rem;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.612);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.overlay-active{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.new-user-add-form{
+    position: absolute;
+    z-index: 10;
+    top: 30%;
+    background-color: black;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5em;
+    max-width: 60%;
+    border-radius: 5%;
+    opacity: 0;
+    scale: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: 400ms all ease-in-out;
+}
+
+.form-active{
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.new-user-add-form > h2{
+    font-size: 2.25rem;
+    border-bottom: 2px solid white;
+    line-height: 3rem;
+}
+
+.new-user-add-form > .user-credentials-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.new-user-add-form > .user-credentials-container > label{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.new-user-add-form > .user-credentials-container > input{
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 1em 1em 1em 1em;
+    padding: 0.5rem;
+    width: 80%;
+    background-color: rgba(128, 128, 128, 0.201);
+    backdrop-filter: blur(2px);
+    color: white;
+    transition: 100ms all ease-out;
+    cursor: pointer;
+}
+
+.new-user-add-form > .user-credentials-container > input:hover, input:focus{
+    outline: 2px solid white;
+}
+
+.new-user-add-form > .submit-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 25%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin: 0rem auto;
+    cursor: pointer;
+    background-color: black;
+    color: hsl(127, 100%, 54.9%);
+    outline: 2px solid hsl(127, 100%, 54.9%);
+    border: none;
+    border-radius: 5%;
+    transition: 200ms all ease;
+}
+
+.new-user-add-form > .submit-btn:hover, .submit-btn:focus{
+    transform: scale(1.0725);
+    color: hsl(127, 100%, 64.9%);
+    outline: 2px solid hsl(127, 100%, 64.9%);
+    background-color: rgba(0, 0, 0, 0.5);
+}
