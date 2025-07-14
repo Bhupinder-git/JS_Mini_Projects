@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #020024;
+    background: linear-gradient(310deg, rgb(66, 42, 49) 0%, rgb(0, 0, 0) 56%, rgb(0, 213, 255) 99%);
+}
+
+.container{
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+h1{
+    color: rgba(255, 255, 255, 0.642);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2px;
+}
+
+.display-container{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 0.75rem;
+    border-bottom: 3px solid white;
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+.display{
+    width: 100%;
+    border-radius: 0.75rem;
+    background: transparent;
+    padding: 1.15rem 1rem;
+    padding-right: 3.25rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: whitesmoke;
+    border: none;
+    outline: none;
+}
+
+.display::placeholder{
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color: whitesmoke;
+    text-transform: uppercase;
+    transform: translateY(-15px);
+}
+
+.display-container button{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    color: white;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 0.75rem;
+    width: 100%;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.length-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.length-container p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.strength-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.strength-container div{
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.generateButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.201);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    border-radius: 0.75rem;
+    border: none;
+    border-bottom: 3px solid white;
+    outline: none;
+    transition: 400ms all;
+}
+
+.generateButton:hover{
+    transform: scale(1.05);
+    border-bottom: 3px solid #0022ff;
+}
+
+.check{
+   display: flex;
+   align-items: center;
+   color: white;
+   gap: 0.5rem; 
+   cursor: pointer;
+}
+
+.check input{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.check label{
+    font-size: 1.25rem;
+    word-spacing: 2px;
+    cursor: pointer;
+}
+
+.slider{
+    width: 100%;
+    outline: none;
+}
+
+.copyBtn{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: -12px;
+}
+
+.tooltip{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: -115%;
+    right: -100%;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.611);
+    padding: 3px;
+    border: .5px solid white;
+    border-radius: 0.75rem;
+    width: 70px;
+    opacity: 0;
+    scale: 0;
+    transform: translateY(-15px);
+    transition: 400ms all ease-out;
+}
+
+.active{
+    scale: 1;
+    opacity: 1;
+    transform: translateY(0);
+}
